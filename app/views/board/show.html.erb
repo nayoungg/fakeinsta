@@ -1,0 +1,15 @@
+<h1>게시글</h1>
+
+<div class="well">
+    제목 : <%= @post.title %><br>
+    내용 : <%= @post.content %>
+</div>
+
+<form action="/board/<%= @post.id %>/create_reply">
+    <input type="test" name="content" placeholder="댓글을 입력해주세요">
+    <input type="submit" value="댓글입력">
+</form>
+
+<% @replies.each do |r| %>
+<%= r.content %> <br>
+<% end %>
